@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Sign Up</h1>
+    <%= form_for @usuario do |f| %>
+      <% if @usuario.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <%= @usuario.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <div class="row">
+        <div class="input-field col s12 m6 l6">
+          <i class="material-icons prefix">account_circle</i>
+          <%= f.text_field :name, placeholder: "Juanito", type: "text", class: "validate" %>
+        </div>
+        <div class="input-field col s12 m6 l6">
+    	    <input placeholder="Perez" type="text" class="validate">
+          <label for="first_name"></label>
+    	  </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">email</i>
+          <%= f.text_field :email, placeholder: "email@company.com", type: "text", class: "validate" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l6">
+          <%= f.text_field :password, placeholder: "Password", type: "password", class: "validate" %>
+        </div>
+        <div class="input-field col s12 m6 l6">
+          <%= f.text_field :password_confirmation, placeholder: "Confirm password", type: "password", class: "validate" %>
+        </div>
+      </div>
+      <div class="field" hidden>
+        <%= f.label :tipo %><br />
+        <%= f.text_field :tipo, value: 1%>
+      </div>
+      <div class="actions waves-effect waves-ligh green white-text text-white btn"><i class="material-icons right">done</i><%= f.submit %></a></div>
+      <a href="localhost:3000" class="waves-effect waves-ligh red white-text text-white btn"><i class="material-icons right">clear</i>Cancelar</a>
+      <% end %>
+  </div>
