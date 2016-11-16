@@ -23,6 +23,7 @@
                         <%  if current_usuario.tipo == 2 %>
                             <li><%= current_usuario.name %></li>
                             <li><%= link_to "Mis Eventos", eventos_path %></li>
+                            <li><%= link_to "Crear Evento", new_evento_path %></li>
                             <li><%= link_to "Log out", session_path("current"), method: "delete" %></li>
                         <% else %>
                             <li><%= current_usuario.name %></li>
