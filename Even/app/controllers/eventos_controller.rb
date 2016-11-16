@@ -7,7 +7,7 @@ class EventosController < ApplicationController
     @evento = Evento.new
   end
   def create
-    @evento = Evento.new(evento_params)
+    @evento = current_usuario.eventos.new(evento_params)
     if @evento.save
       redirect_to eventos_path, notice: "Evento creado"
     else

@@ -14,6 +14,6 @@ class UsuariosController < ApplicationController
 
   private
     def usuario_params
-      params.require(:usuario).permit(:name,:email,:password,:password_confirmation)
+      params.require(:usuario).permit(:name,:email,:password,:password_confirmation,:tipo)
     end
 end
